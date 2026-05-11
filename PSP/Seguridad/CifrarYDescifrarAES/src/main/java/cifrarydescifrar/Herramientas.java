@@ -62,7 +62,7 @@ public class Herramientas {
     public byte[] descifrar() throws Exception {
         if (hashKey == null) throw new IllegalStateException("¡Clave no inicializada!");
 
-        // 1. Leer todo el archivo
+        // 1. Leer to do el archivo
         byte[] contenidoCompleto = Files.readAllBytes(Paths.get(FICHERO_CIFRADO));
 
         // 2. Extraer el IV (los primeros 16 bytes)
