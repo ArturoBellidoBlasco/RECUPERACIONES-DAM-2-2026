@@ -1,0 +1,40 @@
+meta {
+  name: UpdateOneProducto
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/api/productos
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 6,
+    "nombre": "Auriculares Cancelación Ruido Pro",
+    "categoria": "accesorios",
+    "marca": "SoundWave",
+    "precio": 249.99,
+    "stock": 12,
+    "especificaciones": {
+      "tipo": "Over-Ear",
+      "conectividad": "Bluetooth 5.2",
+      "color": "plata",
+      "autonomia": "30 horas"
+    },
+    "opiniones": [
+      {
+        "usuario": "Elena",
+        "calificacion": 5,
+        "comentario": "El aislamiento acústico es de otro mundo, muy cómodos."
+      }
+    ],
+    "tags": [
+      "audio",
+      "premium",
+      "wireless"
+    ]
+  }
+}

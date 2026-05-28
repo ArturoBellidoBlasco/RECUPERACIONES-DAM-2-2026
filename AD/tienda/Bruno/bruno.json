@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "TiendaMongo",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
