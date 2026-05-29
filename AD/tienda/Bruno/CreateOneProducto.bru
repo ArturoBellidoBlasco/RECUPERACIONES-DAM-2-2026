@@ -1,11 +1,11 @@
 meta {
-  name: UpdateOneProducto
+  name: CreateOneProducto
   type: http
-  seq: 5
+  seq: 4
 }
 
-put {
-  url: http://localhost:8080/api/productos/6
+post {
+  url: http://localhost:8080/api/productos
   body: json
   auth: inherit
 }
@@ -13,7 +13,7 @@ put {
 body:json {
   {
     "id": 6,
-    "nombre": "Auriculares Culeación Ruido Pro",
+    "nombre": "Auriculares Cancelación Ruido Pro",
     "categoria": "accesorios",
     "marca": "SoundWave",
     "precio": 249.99,

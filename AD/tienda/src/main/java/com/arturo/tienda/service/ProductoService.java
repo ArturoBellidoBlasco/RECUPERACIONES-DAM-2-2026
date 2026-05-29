@@ -34,4 +34,30 @@ public class ProductoService {
 
         return productoRepository.save(producto);
     }
+
+    public Producto updateProducto(String id, Producto producto) {
+        Optional<Producto> producto1 = productoRepository.findById(id);
+        if (producto1.isPresent()) {
+            Producto producto2 = producto1.get();
+            producto2.setNombre(producto.getNombre());
+            producto2.setPrecio(producto.getPrecio());
+            producto2.setCategoria(producto.getCategoria());
+            producto2.setMarca(producto.getMarca());
+            producto2.setStock(producto.getStock());
+            producto2.setEspecificaciones(producto.getEspecificaciones());
+            producto2.setOpiniones(producto.getOpiniones());
+            producto2.setTags(producto.getTags());
+            productoRepository.save(producto2);
+            return producto2;
+        }
+        throw new ProductoNotFoundException("Producto con ID: " + id + " no encontrado.");
+    }
+
+    public void deleteProducto(String id) {
+        Optional<Producto> producto = productoRepository.findById(id);
+        if (producto.isPresent()) {
+            productoRepository.delete(producto.get());
+        }
+        throw  new ProductoNotFoundException("Producto con ID: " + id + " no encontrado.");
+    }
 }

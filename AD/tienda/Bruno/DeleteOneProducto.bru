@@ -1,12 +1,12 @@
 meta {
-  name: UpdateOneProducto
+  name: DeleteOneProducto
   type: http
-  seq: 5
+  seq: 6
 }
 
-put {
+delete {
   url: http://localhost:8080/api/productos/6
-  body: json
+  body: none
   auth: inherit
 }
 
