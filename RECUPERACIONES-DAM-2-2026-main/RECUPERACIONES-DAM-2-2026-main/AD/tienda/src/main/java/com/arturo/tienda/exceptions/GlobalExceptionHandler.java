@@ -30,26 +30,4 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDTO, HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler(ProveedorNotFoundException.class)
-    public ResponseEntity<ErrorDTO> handleProveedorNotFoundException(ProveedorNotFoundException ex, WebRequest request) {
-        ErrorDTO errorDTO = new ErrorDTO(
-                HttpStatus.NOT_FOUND.value(),
-                "Not Found",
-                ex.getMessage(),
-                request.getDescription(false).replace("uri=", "")
-        );
-        return new ResponseEntity<>(errorDTO, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(ProveedorYaExistenteException.class)
-    public ResponseEntity<ErrorDTO> handleProveedorYaExistenteException(ProveedorYaExistenteException ex, WebRequest request) {
-        ErrorDTO errorDTO = new ErrorDTO(
-                HttpStatus.CONFLICT.value(),
-                "Conflict",
-                ex.getMessage(),
-                request.getDescription(false).replace("uri=", "")
-        );
-        return new ResponseEntity<>(errorDTO, HttpStatus.CONFLICT);
-    }
-
 }

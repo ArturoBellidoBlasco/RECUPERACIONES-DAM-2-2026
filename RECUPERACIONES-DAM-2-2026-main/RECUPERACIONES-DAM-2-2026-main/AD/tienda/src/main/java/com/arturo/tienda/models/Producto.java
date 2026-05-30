@@ -26,5 +26,4 @@ public class Producto {
     private Map<String, Object> especificaciones;
     private List<Opinion> opiniones;
     private List<String> tags;
-    private String proveedorId;
 }
